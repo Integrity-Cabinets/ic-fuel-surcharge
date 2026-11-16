@@ -1,0 +1,14 @@
+{
+  "lastRunAt": "2026-11-16T19:12:06.762Z",
+  "lastSuccessAt": "2026-11-16T19:12:06.762Z",
+  "ok": true,
+  "mode": "live",
+  "currentWeek": "2026-11-16",
+  "currentWeekHasRate": true,
+  "nextWeekHasRate": false,
+  "recordsAdded": [
+    "2026-11-16: 3.25%"
+  ],
+  "alerts": [],
+  "latestEiaFigureSeen": "2026-11-09"
+}

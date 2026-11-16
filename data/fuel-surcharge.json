@@ -1,5 +1,26 @@
 {
   "schemaVersion": 1,
   "timezone": "America/Chicago",
-  "records": []
+  "records": [
+    {
+      "weekStart": "2026-11-16",
+      "displayEnd": "2026-11-20",
+      "effectiveStart": "2026-11-16T06:00:00.000Z",
+      "effectiveEnd": "2026-11-23T06:00:00.000Z",
+      "surchargePercent": "3.25",
+      "method": "auto",
+      "benchmark": {
+        "source": "U.S. Energy Information Administration (EIA), Gasoline and Diesel Fuel Update",
+        "seriesId": "EMD_EPD2D_PTE_NUS_DPG",
+        "units": "$/GAL",
+        "observationDate": "2026-11-09",
+        "priceDollarsPerGallon": "6.127",
+        "roundedForChart": "6.13",
+        "retrievedAt": "2026-11-16T19:12:06.762Z"
+      },
+      "configVersion": "2023-09-18.r1",
+      "recordedAt": "2026-11-16T19:12:06.762Z",
+      "notes": []
+    }
+  ]
 }
