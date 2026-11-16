@@ -1,0 +1,69 @@
+name: Update fuel surcharge
+
+# Runs twice a day. Most runs find nothing to do, which is expected.
+# EIA releases the weekly diesel figure on Tuesday about 10:00 a.m. Eastern
+# (Wednesday after a federal holiday). The first run after that stores the rate
+# for the FOLLOWING Monday. The banner switches over by itself at Monday
+# 12:00 a.m. Central, so nothing depends on a job running exactly at midnight.
+on:
+  schedule:
+    - cron: '40 16 * * *'   # about 10:40 a.m. Central (11:40 during daylight time)
+    - cron: '40 22 * * *'   # afternoon retry
+  workflow_dispatch:
+    inputs:
+      manual_week:
+        description: 'MANUAL RATE ONLY: Monday the week starts (YYYY-MM-DD). Leave blank for a normal run.'
+        required: false
+      manual_percent:
+        description: 'MANUAL RATE ONLY: percent with two decimals, e.g. 7.25'
+        required: false
+      manual_note:
+        description: 'MANUAL RATE ONLY: who set it and why'
+        required: false
+
+permissions:
+  contents: write
+
+# Only one run at a time, so two runs can never write conflicting rates.
+concurrency:
+  group: fuel-surcharge-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the surcharge rules
+        run: node --test
+
+      - name: Update the rate
+        id: update
+        continue-on-error: true
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          MANUAL_WEEK: ${{ inputs.manual_week }}
+          MANUAL_PERCENT: ${{ inputs.manual_percent }}
+          MANUAL_NOTE: ${{ inputs.manual_note }}
+        run: node scripts/update.mjs
+
+      - name: Save results
+        run: |
+          git config user.name "fuel-surcharge-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/fuel-surcharge.json data/status.json
+          if git diff --cached --quiet; then
+            echo "Nothing to save."
+          else
+            git commit -m "Fuel surcharge update $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push || (git pull --rebase && git push)
+          fi
+
+      # A red X here makes GitHub email whoever is watching this repository.
+      - name: Report problems
+        if: steps.update.outcome == 'failure'
+        run: |
+          echo "The update needs attention. Open data/status.json for the reason."
+          exit 1
