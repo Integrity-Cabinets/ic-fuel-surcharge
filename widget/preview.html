@@ -1,0 +1,767 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEMO - Fuel surcharge banner preview</title>
+<style>body{font:15px/1.5 Arial,sans-serif;margin:24px;background:#f4f1ec;color:#222}h1{font-size:20px}h2{font-size:14px;margin:24px 0 6px}iframe{width:100%;height:380px;border:1px solid #bbb}@media(max-width:760px){iframe{height:680px}}p{max-width:60em}</style>
+<h1>DEMO preview: sample data, not a live rate</h1>
+<p>These panels use the sample file in tests/fixtures. They show how the banner looks in each situation. Narrow the window to see the phone layout.</p>
+<h2>Normal week, with an announcement</h2><iframe title="Normal week, with an announcement" srcdoc="<!doctype html><meta charset=&quot;utf-8&quot;><meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;><body style=&quot;margin:0;padding:24px 16px;background:#3a2a1c linear-gradient(160deg,#4a3524,#2a1d13)&quot;><script>window.IC_FUEL_DEMO={&quot;now&quot;:&quot;2026-11-16T18:00:00Z&quot;,&quot;records&quot;:[{&quot;weekStart&quot;:&quot;2026-11-16&quot;,&quot;displayEnd&quot;:&quot;2026-11-20&quot;,&quot;effectiveStart&quot;:&quot;2026-11-16T06:00:00.000Z&quot;,&quot;effectiveEnd&quot;:&quot;2026-11-23T06:00:00.000Z&quot;,&quot;surchargePercent&quot;:&quot;3.25&quot;,&quot;method&quot;:&quot;auto&quot;,&quot;benchmark&quot;:{&quot;source&quot;:&quot;U.S. Energy Information Administration (EIA), Gasoline and Diesel Fuel Update&quot;,&quot;seriesId&quot;:&quot;EMD_EPD2D_PTE_NUS_DPG&quot;,&quot;units&quot;:&quot;$/GAL&quot;,&quot;observationDate&quot;:&quot;2026-11-09&quot;,&quot;priceDollarsPerGallon&quot;:&quot;6.127&quot;,&quot;roundedForChart&quot;:&quot;6.13&quot;,&quot;retrievedAt&quot;:&quot;2026-11-16T18:00:00.000Z&quot;},&quot;configVersion&quot;:&quot;2023-09-18.r1&quot;,&quot;recordedAt&quot;:&quot;2026-11-16T18:00:00.000Z&quot;,&quot;notes&quot;:[]}],&quot;lead&quot;:{&quot;howThisWorks&quot;:&quot;The dates below are the lead times for the week that starts on anchorWeek. Every Monday after that, the banner moves each one forward 7 days by itself. To reset the pattern, set anchorWeek to this week's Monday and enter this week's dates. To change one week only, add a line to overrides.&quot;,&quot;anchorWeek&quot;:&quot;2026-11-16&quot;,&quot;items&quot;:[{&quot;label&quot;:&quot;Rush Orders&quot;,&quot;type&quot;:&quot;week&quot;,&quot;weekOf&quot;:&quot;2026-11-30&quot;},{&quot;label&quot;:&quot;Regular Production&quot;,&quot;type&quot;:&quot;week&quot;,&quot;weekOf&quot;:&quot;2026-12-14&quot;},{&quot;label&quot;:&quot;Elite Production&quot;,&quot;type&quot;:&quot;week&quot;,&quot;weekOf&quot;:&quot;2027-01-04&quot;}],&quot;overrides&quot;:[{&quot;week&quot;:&quot;2026-11-30&quot;,&quot;label&quot;:&quot;Regular Production&quot;,&quot;value&quot;:&quot;Week of January 4th – January 8th&quot;,&quot;why&quot;:&quot;Holiday schedule: 5-week lead time&quot;},{&quot;week&quot;:&quot;2026-12-07&quot;,&quot;label&quot;:&quot;Regular Production&quot;,&quot;value&quot;:&quot;Week of January 11th – January 15th&quot;,&quot;why&quot;:&quot;Holiday schedule: 5-week lead time&quot;},{&quot;week&quot;:&quot;2026-12-14&quot;,&quot;label&quot;:&quot;Regular Production&quot;,&quot;value&quot;:&quot;Week of January 18th – January 22nd&quot;,&quot;why&quot;:&quot;Holiday schedule: 5-week lead time&quot;},{&quot;week&quot;:&quot;2026-12-14&quot;,&quot;label&quot;:&quot;Rush Orders&quot;,&quot;value&quot;:&quot;Contact Customer Service&quot;,&quot;why&quot;:&quot;Normal pattern gives the week of Dec 28, which has no production. Real week not yet confirmed.&quot;},{&quot;week&quot;:&quot;2026-12-21&quot;,&quot;label&quot;:&quot;Regular Production&quot;,&quot;value&quot;:&quot;Week of January 25th – January 29th&quot;,&quot;why&quot;:&quot;Holiday schedule: Dec 21 and Dec 28 orders combined&quot;},{&quot;week&quot;:&quot;2026-12-21&quot;,&quot;label&quot;:&quot;Rush Orders&quot;,&quot;value&quot;:&quot;Week of January 4th – January 8th&quot;,&quot;why&quot;:&quot;Holiday schedule&quot;},{&quot;week&quot;:&quot;2026-12-28&quot;,&quot;label&quot;:&quot;Rush Orders&quot;,&quot;value&quot;:&quot;Week of January 4th – January 8th&quot;,&quot;why&quot;:&quot;Holiday schedule&quot;}],&quot;normalPattern&quot;:&quot;Rush: production week 2 weeks out. Regular: 4 weeks out. Elite: 7 weeks out. Confirmed by Derek, November 16, 2026.&quot;},&quot;ann&quot;:{&quot;announcements&quot;:[{&quot;text&quot;:&quot;SAMPLE ANNOUNCEMENT: Our offices will be closed Thursday and Friday, November 26 and 27.&quot;,&quot;showFrom&quot;:&quot;2026-11-16&quot;,&quot;showThrough&quot;:&quot;2026-11-27&quot;}]}}</script><!--
+  Integrity Cabinets - Fuel Surcharge, Lead Times &amp; Announcements banner
+  Paste this whole file into a Squarespace Code Block (Display Source OFF).
+  Change only the DATA_URL line below if your GitHub account or repository name differs.
+-->
+<link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>
+<link href=&quot;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+
+<section id=&quot;icfs&quot; class=&quot;icfs&quot; aria-labelledby=&quot;icfs-title&quot;>
+  <div class=&quot;icfs-ann&quot; id=&quot;icfs-ann&quot; hidden></div>
+  <div class=&quot;icfs-rate&quot;>
+    <h2 id=&quot;icfs-title&quot; class=&quot;icfs-label&quot;>Current Fuel Surcharge</h2>
+    <p class=&quot;icfs-value&quot; id=&quot;icfs-value&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;>Loading&amp;hellip;</p>
+    <p class=&quot;icfs-dates&quot; id=&quot;icfs-dates&quot;></p>
+    <p class=&quot;icfs-flag&quot; id=&quot;icfs-flag&quot; hidden></p>
+  </div>
+
+  <div class=&quot;icfs-lead&quot; id=&quot;icfs-lead&quot; hidden>
+    <h3 class=&quot;icfs-label&quot;>Current Lead Times <span id=&quot;icfs-lead-asof&quot;></span></h3>
+    <dl class=&quot;icfs-lead-list&quot; id=&quot;icfs-lead-list&quot;></dl>
+  </div>
+
+  <p class=&quot;icfs-foot&quot; id=&quot;icfs-foot&quot; hidden>
+    <span id=&quot;icfs-basis&quot;></span>
+    Updated every Monday from the most recent U.S. diesel average the EIA published before that Monday. Applies to orders placed during the week shown.
+    <a href=&quot;https://www.eia.gov/petroleum/gasdiesel/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>EIA Gasoline and Diesel Fuel Update<span class=&quot;icfs-sr&quot;> (opens in a new tab)</span></a>
+  </p>
+</section>
+
+<style>
+  .icfs, .icfs * { box-sizing: border-box; }
+  .icfs [hidden] { display: none !important; }
+  .icfs {
+    --icfs-accent: #c9975b; --icfs-cream: #f3e9d6; --icfs-muted: #c4b49c;
+    display: grid; grid-template-columns: minmax(270px, 0.9fr) 2fr; gap: 0 32px;
+    max-width: 960px; margin: 0 auto; padding: 20px 28px 16px;
+    background: rgba(36, 26, 18, 0.92); border: 1px solid rgba(201, 151, 91, 0.35); border-left: 3px solid var(--icfs-accent);
+    color: var(--icfs-cream); font-family: &quot;Cormorant Garamond&quot;, Georgia, &quot;Times New Roman&quot;, serif; text-align: left;
+  }
+  .icfs p, .icfs h2, .icfs h3, .icfs dl, .icfs dd, .icfs dt { margin: 0; padding: 0; }
+  .icfs-label {
+    font: 600 11px/1.4 &quot;Helvetica Neue&quot;, Arial, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: var(--icfs-accent);
+  }
+  .icfs-label span { color: var(--icfs-muted); letter-spacing: 0.06em; text-transform: none; font-weight: 400; }
+  .icfs-value { font-size: 52px; font-weight: 600; line-height: 1.05; color: #fff8ea; margin-top: 4px !important; }
+  .icfs-value.icfs-small { font-size: 21px; line-height: 1.3; margin-top: 8px !important; }
+  .icfs-dates { font-size: 19px; color: var(--icfs-cream); }
+  .icfs-flag {
+    display: inline-block; margin-top: 8px !important; padding: 3px 8px; border: 1px solid var(--icfs-accent);
+    font: 600 11px/1.4 &quot;Helvetica Neue&quot;, Arial, sans-serif; letter-spacing: 0.04em; color: #ffe2b8;
+  }
+  .icfs-lead { border-left: 1px solid rgba(201, 151, 91, 0.3); padding-left: 32px; }
+  .icfs-lead-list { margin-top: 8px !important; }
+  .icfs-lead-list div { display: grid; grid-template-columns: 11.5em 1fr; gap: 12px; padding: 5px 0; border-bottom: 1px solid rgba(243, 233, 214, 0.12); }
+  .icfs-lead-list div:last-child { border-bottom: 0; }
+  .icfs-lead-list dt { font-size: 18px; color: var(--icfs-muted); }
+  .icfs-lead-list dd { font-size: 19px; font-weight: 600; color: #fff8ea; }
+  .icfs-lead-note { font-size: 18px; color: var(--icfs-cream); margin-top: 8px !important; }
+  .icfs-ann { grid-column: 1 / -1; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(243, 233, 214, 0.15); }
+  .icfs-ann p { font-size: 19px; line-height: 1.35; color: #fff8ea; margin-top: 4px !important; }
+  .icfs-ann p + p { margin-top: 8px !important; }
+  .icfs-foot {
+    grid-column: 1 / -1; margin-top: 14px !important; padding-top: 10px !important; border-top: 1px solid rgba(243, 233, 214, 0.15);
+    font: 400 12px/1.55 &quot;Helvetica Neue&quot;, Arial, sans-serif; color: var(--icfs-muted);
+  }
+  .icfs-foot a { color: #e3b67c; text-decoration: underline; white-space: nowrap; }
+  .icfs-foot a:hover, .icfs-foot a:focus { color: #fff8ea; }
+  .icfs-foot a:focus-visible { outline: 2px solid #fff8ea; outline-offset: 2px; }
+  .icfs-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (max-width: 700px) {
+    .icfs { grid-template-columns: 1fr; padding: 18px 18px 14px; }
+    .icfs-lead { border-left: 0; padding-left: 0; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(201, 151, 91, 0.3); }
+    .icfs-lead-list div { grid-template-columns: 1fr; gap: 0; }
+    .icfs-value { font-size: 46px; }
+    .icfs-foot a { white-space: normal; }
+  }
+</style>
+
+<script>
+(function () {
+  // ---- The only setting: where the saved weekly data lives. ----
+  var DATA_URL = 'https://raw.githubusercontent.com/Integrity-Cabinets/ic-fuel-surcharge/main/data/';
+  var PHONE = '256-354-1431';
+  var REFRESH_MINUTES = 15;
+
+  var demo = window.IC_FUEL_DEMO || null; // set only by the local preview page
+  var $ = function (id) { return document.getElementById(id); };
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var state = { records: null, lead: null, ann: null };
+  var switchTimer = null;
+
+  function parts(d) { var p = String(d).split('-'); return { y: +p[0], m: +p[1], d: +p[2] }; }
+  function longDate(d) { var p = parts(d); return MONTHS[p.m - 1] + ' ' + p.d + ', ' + p.y; }
+  function range(a, b) {
+    var s = parts(a), e = parts(b);
+    if (s.y !== e.y) return longDate(a) + ' – ' + longDate(b);
+    if (s.m !== e.m) return MONTHS[s.m - 1] + ' ' + s.d + ' – ' + MONTHS[e.m - 1] + ' ' + e.d + ', ' + e.y;
+    return MONTHS[s.m - 1] + ' ' + s.d + ' – ' + e.d + ', ' + e.y;
+  }
+  function validRecord(r) {
+    return r &amp;&amp; /^\d{4}-\d{2}-\d{2}$/.test(r.weekStart) &amp;&amp; /^\d{4}-\d{2}-\d{2}$/.test(r.displayEnd) &amp;&amp;
+      /^\d{1,2}\.\d{2}$/.test(r.surchargePercent) &amp;&amp; !isNaN(Date.parse(r.effectiveStart)) &amp;&amp; !isNaN(Date.parse(r.effectiveEnd));
+  }
+  function todayCentral(now) {
+    try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now); }
+    catch (e) { return new Date(now).toISOString().slice(0, 10); }
+  }
+  function daysBetween(a, b) { return Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 86400000); }
+  function show(el, on) { el.hidden = !on; }
+
+  function render() {
+    var now = demo &amp;&amp; demo.now ? new Date(demo.now) : new Date();
+    var value = $('icfs-value'), dates = $('icfs-dates'), flag = $('icfs-flag'), foot = $('icfs-foot');
+    var good = (state.records || []).filter(validRecord);
+    var current = null, lastPast = null;
+    good.forEach(function (r) {
+      var start = Date.parse(r.effectiveStart), end = Date.parse(r.effectiveEnd);
+      if (start <= now &amp;&amp; now < end) current = r;
+      else if (end <= now &amp;&amp; (!lastPast || r.weekStart > lastPast.weekStart)) lastPast = r;
+    });
+    var shown = current || lastPast;
+
+    if (!shown) {
+      value.textContent = state.records === null ? 'Loading…' : 'Fuel surcharge unavailable — contact Integrity Cabinets.';
+      value.className = 'icfs-value icfs-small';
+      dates.textContent = state.records === null ? '' : PHONE;
+      show(flag, false); show(foot, false);
+    } else {
+      value.textContent = shown.surchargePercent + '%';
+      value.className = 'icfs-value';
+      dates.textContent = (current ? 'Effective ' : 'Was effective ') + range(shown.weekStart, shown.displayEnd);
+      var flags = [];
+      if (demo) flags.push('Demo — sample data, not a live rate');
+      if (!current) flags.push('This week’s rate is pending — contact Customer Service, ' + PHONE);
+      flag.textContent = flags.join(' · ');
+      show(flag, flags.length > 0);
+      var b = shown.benchmark;
+      $('icfs-basis').textContent = b &amp;&amp; b.priceDollarsPerGallon
+        ? 'Based on the EIA U.S. on-highway diesel average of $' + b.priceDollarsPerGallon + ' per gallon for the week of ' + longDate(b.observationDate) + '. '
+        : 'Rate set by Integrity Cabinets for this week. ';
+      show(foot, true);
+    }
+
+    renderLead(now);
+    renderAnnouncements(now);
+    clearTimeout(switchTimer);
+    if (current &amp;&amp; !demo) {
+      // Switch to the new week at the cutoff even if the page was left open.
+      var wait = Date.parse(current.effectiveEnd) - Date.now() + 1000;
+      switchTimer = setTimeout(function () { render(); load(); }, Math.min(Math.max(wait, 1000), 2147000000));
+    }
+  }
+
+  function addDays(d, n) { var t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0, 10); }
+  function isDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d) &amp;&amp; !isNaN(Date.parse(d + 'T00:00:00Z')); }
+  function mondayOf(d) { return addDays(d, -((new Date(d + 'T00:00:00Z').getUTCDay() + 6) % 7)); }
+  function ordinal(d) {
+    var p = parts(d), n = p.d, suffix = (n % 100 >= 11 &amp;&amp; n % 100 <= 13) ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] || 'th');
+    return MONTHS[p.m - 1] + ' ' + n + suffix;
+  }
+
+  // Lead times roll forward 7 days every Monday from the dates saved for anchorWeek.
+  function leadRows(lt, thisMonday) {
+    if (!lt || !isDate(lt.anchorWeek) || !Array.isArray(lt.items) || lt.items.length === 0) return null;
+    var weeks = Math.round(daysBetween(mondayOf(lt.anchorWeek), thisMonday) / 7);
+    if (weeks < 0) weeks = 0;
+    var rows = [];
+    for (var i = 0; i < lt.items.length; i++) {
+      var it = lt.items[i], text = null;
+      if (!it || !it.label) return null;
+      (lt.overrides || []).forEach(function (o) { if (o &amp;&amp; o.week === thisMonday &amp;&amp; o.label === it.label &amp;&amp; o.value) text = String(o.value); });
+      if (text === null) {
+        if (it.type === 'day' &amp;&amp; isDate(it.date)) text = ordinal(addDays(it.date, weeks * 7));
+        else if (it.type === 'week' &amp;&amp; isDate(it.weekOf)) {
+          var start = addDays(mondayOf(it.weekOf), weeks * 7);
+          text = 'Week of ' + ordinal(start) + ' – ' + ordinal(addDays(start, 4));
+        } else return null;
+      }
+      rows.push([String(it.label), text]);
+    }
+    return rows;
+  }
+
+  function renderLead(now) {
+    var box = $('icfs-lead'), list = $('icfs-lead-list'), asof = $('icfs-lead-asof');
+    list.textContent = '';
+    var old = box.querySelector('.icfs-lead-note'); if (old) old.remove();
+    if (state.lead === null) { show(box, false); return; }
+    var thisMonday = mondayOf(todayCentral(now));
+    var rows = leadRows(state.lead, thisMonday);
+    show(box, true);
+    if (!rows) {
+      asof.textContent = '';
+      var note = document.createElement('p');
+      note.className = 'icfs-lead-note';
+      note.textContent = 'Please contact Customer Service for current lead times: ' + PHONE + '.';
+      box.appendChild(note);
+      return;
+    }
+    asof.textContent = '· week of ' + longDate(thisMonday);
+    rows.forEach(function (r) {
+      var row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = r[0]; dd.textContent = r[1];
+      row.appendChild(dt); row.appendChild(dd); list.appendChild(row);
+    });
+  }
+
+  function renderAnnouncements(now) {
+    var box = $('icfs-ann'), today = todayCentral(now);
+    box.textContent = '';
+    var active = ((state.ann &amp;&amp; state.ann.announcements) || []).filter(function (a) {
+      return a &amp;&amp; typeof a.text === 'string' &amp;&amp; a.text.trim() &amp;&amp;
+        (!a.showFrom || (isDate(a.showFrom) &amp;&amp; a.showFrom <= today)) &amp;&amp;
+        (!a.showThrough || (isDate(a.showThrough) &amp;&amp; today <= a.showThrough));
+    }).slice(0, 3);
+    if (active.length) {
+      var h = document.createElement('h3'); h.className = 'icfs-label';
+      h.textContent = active.length > 1 ? 'Announcements' : 'Announcement';
+      box.appendChild(h);
+      active.forEach(function (a) { var p = document.createElement('p'); p.textContent = a.text.trim(); box.appendChild(p); });
+    }
+    show(box, active.length > 0);
+  }
+
+  function getJson(name) {
+    return fetch(DATA_URL + name + '?t=' + Math.floor(Date.now() / 300000), { cache: 'no-store' })
+      .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); });
+  }
+
+  function load() {
+    if (demo) { state.records = demo.records || []; state.lead = demo.lead === undefined ? false : demo.lead; state.ann = demo.ann || null; render(); return; }
+    // If a refresh fails, whatever was last shown stays on screen.
+    getJson('fuel-surcharge.json')
+      .then(function (d) { if (d &amp;&amp; Array.isArray(d.records)) state.records = d.records; else if (state.records === null) state.records = []; })
+      .catch(function () { if (state.records === null) state.records = []; })
+      .then(render);
+    getJson('lead-times.json')
+      .then(function (d) { state.lead = d; })
+      .catch(function () { if (state.lead === null) state.lead = false; })
+      .then(render);
+    getJson('announcements.json')
+      .then(function (d) { state.ann = d; })
+      .catch(function () {})
+      .then(render);
+  }
+
+  load();
+  if (!demo) {
+    setInterval(load, REFRESH_MINUTES * 60000);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) load(); });
+  }
+})();
+</script>
+</body>"></iframe>
+<h2>The following week: lead times have rolled forward 7 days; rate pending (update missed or diesel above the chart)</h2><iframe title="The following week: lead times have rolled forward 7 days; rate pending (update missed or diesel above the chart)" srcdoc="<!doctype html><meta charset=&quot;utf-8&quot;><meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;><body style=&quot;margin:0;padding:24px 16px;background:#3a2a1c linear-gradient(160deg,#4a3524,#2a1d13)&quot;><script>window.IC_FUEL_DEMO={&quot;now&quot;:&quot;2026-11-25T18:00:00Z&quot;,&quot;records&quot;:[{&quot;weekStart&quot;:&quot;2026-11-16&quot;,&quot;displayEnd&quot;:&quot;2026-11-20&quot;,&quot;effectiveStart&quot;:&quot;2026-11-16T06:00:00.000Z&quot;,&quot;effectiveEnd&quot;:&quot;2026-11-23T06:00:00.000Z&quot;,&quot;surchargePercent&quot;:&quot;3.25&quot;,&quot;method&quot;:&quot;auto&quot;,&quot;benchmark&quot;:{&quot;source&quot;:&quot;U.S. Energy Information Administration (EIA), Gasoline and Diesel Fuel Update&quot;,&quot;seriesId&quot;:&quot;EMD_EPD2D_PTE_NUS_DPG&quot;,&quot;units&quot;:&quot;$/GAL&quot;,&quot;observationDate&quot;:&quot;2026-11-09&quot;,&quot;priceDollarsPerGallon&quot;:&quot;6.127&quot;,&quot;roundedForChart&quot;:&quot;6.13&quot;,&quot;retrievedAt&quot;:&quot;2026-11-16T18:00:00.000Z&quot;},&quot;configVersion&quot;:&quot;2023-09-18.r1&quot;,&quot;recordedAt&quot;:&quot;2026-11-16T18:00:00.000Z&quot;,&quot;notes&quot;:[]}],&quot;lead&quot;:{&quot;howThisWorks&quot;:&quot;The dates below are the lead times for the week that starts on anchorWeek. Every Monday after that, the banner moves each one forward 7 days by itself. To reset the pattern, set anchorWeek to this week's Monday and enter this week's dates. To change one week only, add a line to overrides.&quot;,&quot;anchorWeek&quot;:&quot;2026-11-16&quot;,&quot;items&quot;:[{&quot;label&quot;:&quot;Rush Orders&quot;,&quot;type&quot;:&quot;week&quot;,&quot;weekOf&quot;:&quot;2026-11-30&quot;},{&quot;label&quot;:&quot;Regular Production&quot;,&quot;type&quot;:&quot;week&quot;,&quot;weekOf&quot;:&quot;2026-12-14&quot;},{&quot;label&quot;:&quot;Elite Production&quot;,&quot;type&quot;:&quot;week&quot;,&quot;weekOf&quot;:&quot;2027-01-04&quot;}],&quot;overrides&quot;:[{&quot;week&quot;:&quot;2026-11-30&quot;,&quot;label&quot;:&quot;Regular Production&quot;,&quot;value&quot;:&quot;Week of January 4th – January 8th&quot;,&quot;why&quot;:&quot;Holiday schedule: 5-week lead time&quot;},{&quot;week&quot;:&quot;2026-12-07&quot;,&quot;label&quot;:&quot;Regular Production&quot;,&quot;value&quot;:&quot;Week of January 11th – January 15th&quot;,&quot;why&quot;:&quot;Holiday schedule: 5-week lead time&quot;},{&quot;week&quot;:&quot;2026-12-14&quot;,&quot;label&quot;:&quot;Regular Production&quot;,&quot;value&quot;:&quot;Week of January 18th – January 22nd&quot;,&quot;why&quot;:&quot;Holiday schedule: 5-week lead time&quot;},{&quot;week&quot;:&quot;2026-12-14&quot;,&quot;label&quot;:&quot;Rush Orders&quot;,&quot;value&quot;:&quot;Contact Customer Service&quot;,&quot;why&quot;:&quot;Normal pattern gives the week of Dec 28, which has no production. Real week not yet confirmed.&quot;},{&quot;week&quot;:&quot;2026-12-21&quot;,&quot;label&quot;:&quot;Regular Production&quot;,&quot;value&quot;:&quot;Week of January 25th – January 29th&quot;,&quot;why&quot;:&quot;Holiday schedule: Dec 21 and Dec 28 orders combined&quot;},{&quot;week&quot;:&quot;2026-12-21&quot;,&quot;label&quot;:&quot;Rush Orders&quot;,&quot;value&quot;:&quot;Week of January 4th – January 8th&quot;,&quot;why&quot;:&quot;Holiday schedule&quot;},{&quot;week&quot;:&quot;2026-12-28&quot;,&quot;label&quot;:&quot;Rush Orders&quot;,&quot;value&quot;:&quot;Week of January 4th – January 8th&quot;,&quot;why&quot;:&quot;Holiday schedule&quot;}],&quot;normalPattern&quot;:&quot;Rush: production week 2 weeks out. Regular: 4 weeks out. Elite: 7 weeks out. Confirmed by Derek, November 16, 2026.&quot;}}</script><!--
+  Integrity Cabinets - Fuel Surcharge, Lead Times &amp; Announcements banner
+  Paste this whole file into a Squarespace Code Block (Display Source OFF).
+  Change only the DATA_URL line below if your GitHub account or repository name differs.
+-->
+<link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>
+<link href=&quot;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+
+<section id=&quot;icfs&quot; class=&quot;icfs&quot; aria-labelledby=&quot;icfs-title&quot;>
+  <div class=&quot;icfs-ann&quot; id=&quot;icfs-ann&quot; hidden></div>
+  <div class=&quot;icfs-rate&quot;>
+    <h2 id=&quot;icfs-title&quot; class=&quot;icfs-label&quot;>Current Fuel Surcharge</h2>
+    <p class=&quot;icfs-value&quot; id=&quot;icfs-value&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;>Loading&amp;hellip;</p>
+    <p class=&quot;icfs-dates&quot; id=&quot;icfs-dates&quot;></p>
+    <p class=&quot;icfs-flag&quot; id=&quot;icfs-flag&quot; hidden></p>
+  </div>
+
+  <div class=&quot;icfs-lead&quot; id=&quot;icfs-lead&quot; hidden>
+    <h3 class=&quot;icfs-label&quot;>Current Lead Times <span id=&quot;icfs-lead-asof&quot;></span></h3>
+    <dl class=&quot;icfs-lead-list&quot; id=&quot;icfs-lead-list&quot;></dl>
+  </div>
+
+  <p class=&quot;icfs-foot&quot; id=&quot;icfs-foot&quot; hidden>
+    <span id=&quot;icfs-basis&quot;></span>
+    Updated every Monday from the most recent U.S. diesel average the EIA published before that Monday. Applies to orders placed during the week shown.
+    <a href=&quot;https://www.eia.gov/petroleum/gasdiesel/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>EIA Gasoline and Diesel Fuel Update<span class=&quot;icfs-sr&quot;> (opens in a new tab)</span></a>
+  </p>
+</section>
+
+<style>
+  .icfs, .icfs * { box-sizing: border-box; }
+  .icfs [hidden] { display: none !important; }
+  .icfs {
+    --icfs-accent: #c9975b; --icfs-cream: #f3e9d6; --icfs-muted: #c4b49c;
+    display: grid; grid-template-columns: minmax(270px, 0.9fr) 2fr; gap: 0 32px;
+    max-width: 960px; margin: 0 auto; padding: 20px 28px 16px;
+    background: rgba(36, 26, 18, 0.92); border: 1px solid rgba(201, 151, 91, 0.35); border-left: 3px solid var(--icfs-accent);
+    color: var(--icfs-cream); font-family: &quot;Cormorant Garamond&quot;, Georgia, &quot;Times New Roman&quot;, serif; text-align: left;
+  }
+  .icfs p, .icfs h2, .icfs h3, .icfs dl, .icfs dd, .icfs dt { margin: 0; padding: 0; }
+  .icfs-label {
+    font: 600 11px/1.4 &quot;Helvetica Neue&quot;, Arial, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: var(--icfs-accent);
+  }
+  .icfs-label span { color: var(--icfs-muted); letter-spacing: 0.06em; text-transform: none; font-weight: 400; }
+  .icfs-value { font-size: 52px; font-weight: 600; line-height: 1.05; color: #fff8ea; margin-top: 4px !important; }
+  .icfs-value.icfs-small { font-size: 21px; line-height: 1.3; margin-top: 8px !important; }
+  .icfs-dates { font-size: 19px; color: var(--icfs-cream); }
+  .icfs-flag {
+    display: inline-block; margin-top: 8px !important; padding: 3px 8px; border: 1px solid var(--icfs-accent);
+    font: 600 11px/1.4 &quot;Helvetica Neue&quot;, Arial, sans-serif; letter-spacing: 0.04em; color: #ffe2b8;
+  }
+  .icfs-lead { border-left: 1px solid rgba(201, 151, 91, 0.3); padding-left: 32px; }
+  .icfs-lead-list { margin-top: 8px !important; }
+  .icfs-lead-list div { display: grid; grid-template-columns: 11.5em 1fr; gap: 12px; padding: 5px 0; border-bottom: 1px solid rgba(243, 233, 214, 0.12); }
+  .icfs-lead-list div:last-child { border-bottom: 0; }
+  .icfs-lead-list dt { font-size: 18px; color: var(--icfs-muted); }
+  .icfs-lead-list dd { font-size: 19px; font-weight: 600; color: #fff8ea; }
+  .icfs-lead-note { font-size: 18px; color: var(--icfs-cream); margin-top: 8px !important; }
+  .icfs-ann { grid-column: 1 / -1; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(243, 233, 214, 0.15); }
+  .icfs-ann p { font-size: 19px; line-height: 1.35; color: #fff8ea; margin-top: 4px !important; }
+  .icfs-ann p + p { margin-top: 8px !important; }
+  .icfs-foot {
+    grid-column: 1 / -1; margin-top: 14px !important; padding-top: 10px !important; border-top: 1px solid rgba(243, 233, 214, 0.15);
+    font: 400 12px/1.55 &quot;Helvetica Neue&quot;, Arial, sans-serif; color: var(--icfs-muted);
+  }
+  .icfs-foot a { color: #e3b67c; text-decoration: underline; white-space: nowrap; }
+  .icfs-foot a:hover, .icfs-foot a:focus { color: #fff8ea; }
+  .icfs-foot a:focus-visible { outline: 2px solid #fff8ea; outline-offset: 2px; }
+  .icfs-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (max-width: 700px) {
+    .icfs { grid-template-columns: 1fr; padding: 18px 18px 14px; }
+    .icfs-lead { border-left: 0; padding-left: 0; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(201, 151, 91, 0.3); }
+    .icfs-lead-list div { grid-template-columns: 1fr; gap: 0; }
+    .icfs-value { font-size: 46px; }
+    .icfs-foot a { white-space: normal; }
+  }
+</style>
+
+<script>
+(function () {
+  // ---- The only setting: where the saved weekly data lives. ----
+  var DATA_URL = 'https://raw.githubusercontent.com/Integrity-Cabinets/ic-fuel-surcharge/main/data/';
+  var PHONE = '256-354-1431';
+  var REFRESH_MINUTES = 15;
+
+  var demo = window.IC_FUEL_DEMO || null; // set only by the local preview page
+  var $ = function (id) { return document.getElementById(id); };
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var state = { records: null, lead: null, ann: null };
+  var switchTimer = null;
+
+  function parts(d) { var p = String(d).split('-'); return { y: +p[0], m: +p[1], d: +p[2] }; }
+  function longDate(d) { var p = parts(d); return MONTHS[p.m - 1] + ' ' + p.d + ', ' + p.y; }
+  function range(a, b) {
+    var s = parts(a), e = parts(b);
+    if (s.y !== e.y) return longDate(a) + ' – ' + longDate(b);
+    if (s.m !== e.m) return MONTHS[s.m - 1] + ' ' + s.d + ' – ' + MONTHS[e.m - 1] + ' ' + e.d + ', ' + e.y;
+    return MONTHS[s.m - 1] + ' ' + s.d + ' – ' + e.d + ', ' + e.y;
+  }
+  function validRecord(r) {
+    return r &amp;&amp; /^\d{4}-\d{2}-\d{2}$/.test(r.weekStart) &amp;&amp; /^\d{4}-\d{2}-\d{2}$/.test(r.displayEnd) &amp;&amp;
+      /^\d{1,2}\.\d{2}$/.test(r.surchargePercent) &amp;&amp; !isNaN(Date.parse(r.effectiveStart)) &amp;&amp; !isNaN(Date.parse(r.effectiveEnd));
+  }
+  function todayCentral(now) {
+    try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now); }
+    catch (e) { return new Date(now).toISOString().slice(0, 10); }
+  }
+  function daysBetween(a, b) { return Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 86400000); }
+  function show(el, on) { el.hidden = !on; }
+
+  function render() {
+    var now = demo &amp;&amp; demo.now ? new Date(demo.now) : new Date();
+    var value = $('icfs-value'), dates = $('icfs-dates'), flag = $('icfs-flag'), foot = $('icfs-foot');
+    var good = (state.records || []).filter(validRecord);
+    var current = null, lastPast = null;
+    good.forEach(function (r) {
+      var start = Date.parse(r.effectiveStart), end = Date.parse(r.effectiveEnd);
+      if (start <= now &amp;&amp; now < end) current = r;
+      else if (end <= now &amp;&amp; (!lastPast || r.weekStart > lastPast.weekStart)) lastPast = r;
+    });
+    var shown = current || lastPast;
+
+    if (!shown) {
+      value.textContent = state.records === null ? 'Loading…' : 'Fuel surcharge unavailable — contact Integrity Cabinets.';
+      value.className = 'icfs-value icfs-small';
+      dates.textContent = state.records === null ? '' : PHONE;
+      show(flag, false); show(foot, false);
+    } else {
+      value.textContent = shown.surchargePercent + '%';
+      value.className = 'icfs-value';
+      dates.textContent = (current ? 'Effective ' : 'Was effective ') + range(shown.weekStart, shown.displayEnd);
+      var flags = [];
+      if (demo) flags.push('Demo — sample data, not a live rate');
+      if (!current) flags.push('This week’s rate is pending — contact Customer Service, ' + PHONE);
+      flag.textContent = flags.join(' · ');
+      show(flag, flags.length > 0);
+      var b = shown.benchmark;
+      $('icfs-basis').textContent = b &amp;&amp; b.priceDollarsPerGallon
+        ? 'Based on the EIA U.S. on-highway diesel average of $' + b.priceDollarsPerGallon + ' per gallon for the week of ' + longDate(b.observationDate) + '. '
+        : 'Rate set by Integrity Cabinets for this week. ';
+      show(foot, true);
+    }
+
+    renderLead(now);
+    renderAnnouncements(now);
+    clearTimeout(switchTimer);
+    if (current &amp;&amp; !demo) {
+      // Switch to the new week at the cutoff even if the page was left open.
+      var wait = Date.parse(current.effectiveEnd) - Date.now() + 1000;
+      switchTimer = setTimeout(function () { render(); load(); }, Math.min(Math.max(wait, 1000), 2147000000));
+    }
+  }
+
+  function addDays(d, n) { var t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0, 10); }
+  function isDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d) &amp;&amp; !isNaN(Date.parse(d + 'T00:00:00Z')); }
+  function mondayOf(d) { return addDays(d, -((new Date(d + 'T00:00:00Z').getUTCDay() + 6) % 7)); }
+  function ordinal(d) {
+    var p = parts(d), n = p.d, suffix = (n % 100 >= 11 &amp;&amp; n % 100 <= 13) ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] || 'th');
+    return MONTHS[p.m - 1] + ' ' + n + suffix;
+  }
+
+  // Lead times roll forward 7 days every Monday from the dates saved for anchorWeek.
+  function leadRows(lt, thisMonday) {
+    if (!lt || !isDate(lt.anchorWeek) || !Array.isArray(lt.items) || lt.items.length === 0) return null;
+    var weeks = Math.round(daysBetween(mondayOf(lt.anchorWeek), thisMonday) / 7);
+    if (weeks < 0) weeks = 0;
+    var rows = [];
+    for (var i = 0; i < lt.items.length; i++) {
+      var it = lt.items[i], text = null;
+      if (!it || !it.label) return null;
+      (lt.overrides || []).forEach(function (o) { if (o &amp;&amp; o.week === thisMonday &amp;&amp; o.label === it.label &amp;&amp; o.value) text = String(o.value); });
+      if (text === null) {
+        if (it.type === 'day' &amp;&amp; isDate(it.date)) text = ordinal(addDays(it.date, weeks * 7));
+        else if (it.type === 'week' &amp;&amp; isDate(it.weekOf)) {
+          var start = addDays(mondayOf(it.weekOf), weeks * 7);
+          text = 'Week of ' + ordinal(start) + ' – ' + ordinal(addDays(start, 4));
+        } else return null;
+      }
+      rows.push([String(it.label), text]);
+    }
+    return rows;
+  }
+
+  function renderLead(now) {
+    var box = $('icfs-lead'), list = $('icfs-lead-list'), asof = $('icfs-lead-asof');
+    list.textContent = '';
+    var old = box.querySelector('.icfs-lead-note'); if (old) old.remove();
+    if (state.lead === null) { show(box, false); return; }
+    var thisMonday = mondayOf(todayCentral(now));
+    var rows = leadRows(state.lead, thisMonday);
+    show(box, true);
+    if (!rows) {
+      asof.textContent = '';
+      var note = document.createElement('p');
+      note.className = 'icfs-lead-note';
+      note.textContent = 'Please contact Customer Service for current lead times: ' + PHONE + '.';
+      box.appendChild(note);
+      return;
+    }
+    asof.textContent = '· week of ' + longDate(thisMonday);
+    rows.forEach(function (r) {
+      var row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = r[0]; dd.textContent = r[1];
+      row.appendChild(dt); row.appendChild(dd); list.appendChild(row);
+    });
+  }
+
+  function renderAnnouncements(now) {
+    var box = $('icfs-ann'), today = todayCentral(now);
+    box.textContent = '';
+    var active = ((state.ann &amp;&amp; state.ann.announcements) || []).filter(function (a) {
+      return a &amp;&amp; typeof a.text === 'string' &amp;&amp; a.text.trim() &amp;&amp;
+        (!a.showFrom || (isDate(a.showFrom) &amp;&amp; a.showFrom <= today)) &amp;&amp;
+        (!a.showThrough || (isDate(a.showThrough) &amp;&amp; today <= a.showThrough));
+    }).slice(0, 3);
+    if (active.length) {
+      var h = document.createElement('h3'); h.className = 'icfs-label';
+      h.textContent = active.length > 1 ? 'Announcements' : 'Announcement';
+      box.appendChild(h);
+      active.forEach(function (a) { var p = document.createElement('p'); p.textContent = a.text.trim(); box.appendChild(p); });
+    }
+    show(box, active.length > 0);
+  }
+
+  function getJson(name) {
+    return fetch(DATA_URL + name + '?t=' + Math.floor(Date.now() / 300000), { cache: 'no-store' })
+      .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); });
+  }
+
+  function load() {
+    if (demo) { state.records = demo.records || []; state.lead = demo.lead === undefined ? false : demo.lead; state.ann = demo.ann || null; render(); return; }
+    // If a refresh fails, whatever was last shown stays on screen.
+    getJson('fuel-surcharge.json')
+      .then(function (d) { if (d &amp;&amp; Array.isArray(d.records)) state.records = d.records; else if (state.records === null) state.records = []; })
+      .catch(function () { if (state.records === null) state.records = []; })
+      .then(render);
+    getJson('lead-times.json')
+      .then(function (d) { state.lead = d; })
+      .catch(function () { if (state.lead === null) state.lead = false; })
+      .then(render);
+    getJson('announcements.json')
+      .then(function (d) { state.ann = d; })
+      .catch(function () {})
+      .then(render);
+  }
+
+  load();
+  if (!demo) {
+    setInterval(load, REFRESH_MINUTES * 60000);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) load(); });
+  }
+})();
+</script>
+</body>"></iframe>
+<h2>No rate has ever been published; lead-times file unreadable</h2><iframe title="No rate has ever been published; lead-times file unreadable" srcdoc="<!doctype html><meta charset=&quot;utf-8&quot;><meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;><body style=&quot;margin:0;padding:24px 16px;background:#3a2a1c linear-gradient(160deg,#4a3524,#2a1d13)&quot;><script>window.IC_FUEL_DEMO={&quot;now&quot;:&quot;2026-11-16T18:00:00Z&quot;,&quot;records&quot;:[],&quot;lead&quot;:false}</script><!--
+  Integrity Cabinets - Fuel Surcharge, Lead Times &amp; Announcements banner
+  Paste this whole file into a Squarespace Code Block (Display Source OFF).
+  Change only the DATA_URL line below if your GitHub account or repository name differs.
+-->
+<link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>
+<link href=&quot;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+
+<section id=&quot;icfs&quot; class=&quot;icfs&quot; aria-labelledby=&quot;icfs-title&quot;>
+  <div class=&quot;icfs-ann&quot; id=&quot;icfs-ann&quot; hidden></div>
+  <div class=&quot;icfs-rate&quot;>
+    <h2 id=&quot;icfs-title&quot; class=&quot;icfs-label&quot;>Current Fuel Surcharge</h2>
+    <p class=&quot;icfs-value&quot; id=&quot;icfs-value&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;>Loading&amp;hellip;</p>
+    <p class=&quot;icfs-dates&quot; id=&quot;icfs-dates&quot;></p>
+    <p class=&quot;icfs-flag&quot; id=&quot;icfs-flag&quot; hidden></p>
+  </div>
+
+  <div class=&quot;icfs-lead&quot; id=&quot;icfs-lead&quot; hidden>
+    <h3 class=&quot;icfs-label&quot;>Current Lead Times <span id=&quot;icfs-lead-asof&quot;></span></h3>
+    <dl class=&quot;icfs-lead-list&quot; id=&quot;icfs-lead-list&quot;></dl>
+  </div>
+
+  <p class=&quot;icfs-foot&quot; id=&quot;icfs-foot&quot; hidden>
+    <span id=&quot;icfs-basis&quot;></span>
+    Updated every Monday from the most recent U.S. diesel average the EIA published before that Monday. Applies to orders placed during the week shown.
+    <a href=&quot;https://www.eia.gov/petroleum/gasdiesel/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>EIA Gasoline and Diesel Fuel Update<span class=&quot;icfs-sr&quot;> (opens in a new tab)</span></a>
+  </p>
+</section>
+
+<style>
+  .icfs, .icfs * { box-sizing: border-box; }
+  .icfs [hidden] { display: none !important; }
+  .icfs {
+    --icfs-accent: #c9975b; --icfs-cream: #f3e9d6; --icfs-muted: #c4b49c;
+    display: grid; grid-template-columns: minmax(270px, 0.9fr) 2fr; gap: 0 32px;
+    max-width: 960px; margin: 0 auto; padding: 20px 28px 16px;
+    background: rgba(36, 26, 18, 0.92); border: 1px solid rgba(201, 151, 91, 0.35); border-left: 3px solid var(--icfs-accent);
+    color: var(--icfs-cream); font-family: &quot;Cormorant Garamond&quot;, Georgia, &quot;Times New Roman&quot;, serif; text-align: left;
+  }
+  .icfs p, .icfs h2, .icfs h3, .icfs dl, .icfs dd, .icfs dt { margin: 0; padding: 0; }
+  .icfs-label {
+    font: 600 11px/1.4 &quot;Helvetica Neue&quot;, Arial, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: var(--icfs-accent);
+  }
+  .icfs-label span { color: var(--icfs-muted); letter-spacing: 0.06em; text-transform: none; font-weight: 400; }
+  .icfs-value { font-size: 52px; font-weight: 600; line-height: 1.05; color: #fff8ea; margin-top: 4px !important; }
+  .icfs-value.icfs-small { font-size: 21px; line-height: 1.3; margin-top: 8px !important; }
+  .icfs-dates { font-size: 19px; color: var(--icfs-cream); }
+  .icfs-flag {
+    display: inline-block; margin-top: 8px !important; padding: 3px 8px; border: 1px solid var(--icfs-accent);
+    font: 600 11px/1.4 &quot;Helvetica Neue&quot;, Arial, sans-serif; letter-spacing: 0.04em; color: #ffe2b8;
+  }
+  .icfs-lead { border-left: 1px solid rgba(201, 151, 91, 0.3); padding-left: 32px; }
+  .icfs-lead-list { margin-top: 8px !important; }
+  .icfs-lead-list div { display: grid; grid-template-columns: 11.5em 1fr; gap: 12px; padding: 5px 0; border-bottom: 1px solid rgba(243, 233, 214, 0.12); }
+  .icfs-lead-list div:last-child { border-bottom: 0; }
+  .icfs-lead-list dt { font-size: 18px; color: var(--icfs-muted); }
+  .icfs-lead-list dd { font-size: 19px; font-weight: 600; color: #fff8ea; }
+  .icfs-lead-note { font-size: 18px; color: var(--icfs-cream); margin-top: 8px !important; }
+  .icfs-ann { grid-column: 1 / -1; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(243, 233, 214, 0.15); }
+  .icfs-ann p { font-size: 19px; line-height: 1.35; color: #fff8ea; margin-top: 4px !important; }
+  .icfs-ann p + p { margin-top: 8px !important; }
+  .icfs-foot {
+    grid-column: 1 / -1; margin-top: 14px !important; padding-top: 10px !important; border-top: 1px solid rgba(243, 233, 214, 0.15);
+    font: 400 12px/1.55 &quot;Helvetica Neue&quot;, Arial, sans-serif; color: var(--icfs-muted);
+  }
+  .icfs-foot a { color: #e3b67c; text-decoration: underline; white-space: nowrap; }
+  .icfs-foot a:hover, .icfs-foot a:focus { color: #fff8ea; }
+  .icfs-foot a:focus-visible { outline: 2px solid #fff8ea; outline-offset: 2px; }
+  .icfs-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (max-width: 700px) {
+    .icfs { grid-template-columns: 1fr; padding: 18px 18px 14px; }
+    .icfs-lead { border-left: 0; padding-left: 0; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(201, 151, 91, 0.3); }
+    .icfs-lead-list div { grid-template-columns: 1fr; gap: 0; }
+    .icfs-value { font-size: 46px; }
+    .icfs-foot a { white-space: normal; }
+  }
+</style>
+
+<script>
+(function () {
+  // ---- The only setting: where the saved weekly data lives. ----
+  var DATA_URL = 'https://raw.githubusercontent.com/Integrity-Cabinets/ic-fuel-surcharge/main/data/';
+  var PHONE = '256-354-1431';
+  var REFRESH_MINUTES = 15;
+
+  var demo = window.IC_FUEL_DEMO || null; // set only by the local preview page
+  var $ = function (id) { return document.getElementById(id); };
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var state = { records: null, lead: null, ann: null };
+  var switchTimer = null;
+
+  function parts(d) { var p = String(d).split('-'); return { y: +p[0], m: +p[1], d: +p[2] }; }
+  function longDate(d) { var p = parts(d); return MONTHS[p.m - 1] + ' ' + p.d + ', ' + p.y; }
+  function range(a, b) {
+    var s = parts(a), e = parts(b);
+    if (s.y !== e.y) return longDate(a) + ' – ' + longDate(b);
+    if (s.m !== e.m) return MONTHS[s.m - 1] + ' ' + s.d + ' – ' + MONTHS[e.m - 1] + ' ' + e.d + ', ' + e.y;
+    return MONTHS[s.m - 1] + ' ' + s.d + ' – ' + e.d + ', ' + e.y;
+  }
+  function validRecord(r) {
+    return r &amp;&amp; /^\d{4}-\d{2}-\d{2}$/.test(r.weekStart) &amp;&amp; /^\d{4}-\d{2}-\d{2}$/.test(r.displayEnd) &amp;&amp;
+      /^\d{1,2}\.\d{2}$/.test(r.surchargePercent) &amp;&amp; !isNaN(Date.parse(r.effectiveStart)) &amp;&amp; !isNaN(Date.parse(r.effectiveEnd));
+  }
+  function todayCentral(now) {
+    try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now); }
+    catch (e) { return new Date(now).toISOString().slice(0, 10); }
+  }
+  function daysBetween(a, b) { return Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 86400000); }
+  function show(el, on) { el.hidden = !on; }
+
+  function render() {
+    var now = demo &amp;&amp; demo.now ? new Date(demo.now) : new Date();
+    var value = $('icfs-value'), dates = $('icfs-dates'), flag = $('icfs-flag'), foot = $('icfs-foot');
+    var good = (state.records || []).filter(validRecord);
+    var current = null, lastPast = null;
+    good.forEach(function (r) {
+      var start = Date.parse(r.effectiveStart), end = Date.parse(r.effectiveEnd);
+      if (start <= now &amp;&amp; now < end) current = r;
+      else if (end <= now &amp;&amp; (!lastPast || r.weekStart > lastPast.weekStart)) lastPast = r;
+    });
+    var shown = current || lastPast;
+
+    if (!shown) {
+      value.textContent = state.records === null ? 'Loading…' : 'Fuel surcharge unavailable — contact Integrity Cabinets.';
+      value.className = 'icfs-value icfs-small';
+      dates.textContent = state.records === null ? '' : PHONE;
+      show(flag, false); show(foot, false);
+    } else {
+      value.textContent = shown.surchargePercent + '%';
+      value.className = 'icfs-value';
+      dates.textContent = (current ? 'Effective ' : 'Was effective ') + range(shown.weekStart, shown.displayEnd);
+      var flags = [];
+      if (demo) flags.push('Demo — sample data, not a live rate');
+      if (!current) flags.push('This week’s rate is pending — contact Customer Service, ' + PHONE);
+      flag.textContent = flags.join(' · ');
+      show(flag, flags.length > 0);
+      var b = shown.benchmark;
+      $('icfs-basis').textContent = b &amp;&amp; b.priceDollarsPerGallon
+        ? 'Based on the EIA U.S. on-highway diesel average of $' + b.priceDollarsPerGallon + ' per gallon for the week of ' + longDate(b.observationDate) + '. '
+        : 'Rate set by Integrity Cabinets for this week. ';
+      show(foot, true);
+    }
+
+    renderLead(now);
+    renderAnnouncements(now);
+    clearTimeout(switchTimer);
+    if (current &amp;&amp; !demo) {
+      // Switch to the new week at the cutoff even if the page was left open.
+      var wait = Date.parse(current.effectiveEnd) - Date.now() + 1000;
+      switchTimer = setTimeout(function () { render(); load(); }, Math.min(Math.max(wait, 1000), 2147000000));
+    }
+  }
+
+  function addDays(d, n) { var t = new Date(d + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0, 10); }
+  function isDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(d) &amp;&amp; !isNaN(Date.parse(d + 'T00:00:00Z')); }
+  function mondayOf(d) { return addDays(d, -((new Date(d + 'T00:00:00Z').getUTCDay() + 6) % 7)); }
+  function ordinal(d) {
+    var p = parts(d), n = p.d, suffix = (n % 100 >= 11 &amp;&amp; n % 100 <= 13) ? 'th' : (['th', 'st', 'nd', 'rd'][n % 10] || 'th');
+    return MONTHS[p.m - 1] + ' ' + n + suffix;
+  }
+
+  // Lead times roll forward 7 days every Monday from the dates saved for anchorWeek.
+  function leadRows(lt, thisMonday) {
+    if (!lt || !isDate(lt.anchorWeek) || !Array.isArray(lt.items) || lt.items.length === 0) return null;
+    var weeks = Math.round(daysBetween(mondayOf(lt.anchorWeek), thisMonday) / 7);
+    if (weeks < 0) weeks = 0;
+    var rows = [];
+    for (var i = 0; i < lt.items.length; i++) {
+      var it = lt.items[i], text = null;
+      if (!it || !it.label) return null;
+      (lt.overrides || []).forEach(function (o) { if (o &amp;&amp; o.week === thisMonday &amp;&amp; o.label === it.label &amp;&amp; o.value) text = String(o.value); });
+      if (text === null) {
+        if (it.type === 'day' &amp;&amp; isDate(it.date)) text = ordinal(addDays(it.date, weeks * 7));
+        else if (it.type === 'week' &amp;&amp; isDate(it.weekOf)) {
+          var start = addDays(mondayOf(it.weekOf), weeks * 7);
+          text = 'Week of ' + ordinal(start) + ' – ' + ordinal(addDays(start, 4));
+        } else return null;
+      }
+      rows.push([String(it.label), text]);
+    }
+    return rows;
+  }
+
+  function renderLead(now) {
+    var box = $('icfs-lead'), list = $('icfs-lead-list'), asof = $('icfs-lead-asof');
+    list.textContent = '';
+    var old = box.querySelector('.icfs-lead-note'); if (old) old.remove();
+    if (state.lead === null) { show(box, false); return; }
+    var thisMonday = mondayOf(todayCentral(now));
+    var rows = leadRows(state.lead, thisMonday);
+    show(box, true);
+    if (!rows) {
+      asof.textContent = '';
+      var note = document.createElement('p');
+      note.className = 'icfs-lead-note';
+      note.textContent = 'Please contact Customer Service for current lead times: ' + PHONE + '.';
+      box.appendChild(note);
+      return;
+    }
+    asof.textContent = '· week of ' + longDate(thisMonday);
+    rows.forEach(function (r) {
+      var row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = r[0]; dd.textContent = r[1];
+      row.appendChild(dt); row.appendChild(dd); list.appendChild(row);
+    });
+  }
+
+  function renderAnnouncements(now) {
+    var box = $('icfs-ann'), today = todayCentral(now);
+    box.textContent = '';
+    var active = ((state.ann &amp;&amp; state.ann.announcements) || []).filter(function (a) {
+      return a &amp;&amp; typeof a.text === 'string' &amp;&amp; a.text.trim() &amp;&amp;
+        (!a.showFrom || (isDate(a.showFrom) &amp;&amp; a.showFrom <= today)) &amp;&amp;
+        (!a.showThrough || (isDate(a.showThrough) &amp;&amp; today <= a.showThrough));
+    }).slice(0, 3);
+    if (active.length) {
+      var h = document.createElement('h3'); h.className = 'icfs-label';
+      h.textContent = active.length > 1 ? 'Announcements' : 'Announcement';
+      box.appendChild(h);
+      active.forEach(function (a) { var p = document.createElement('p'); p.textContent = a.text.trim(); box.appendChild(p); });
+    }
+    show(box, active.length > 0);
+  }
+
+  function getJson(name) {
+    return fetch(DATA_URL + name + '?t=' + Math.floor(Date.now() / 300000), { cache: 'no-store' })
+      .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); });
+  }
+
+  function load() {
+    if (demo) { state.records = demo.records || []; state.lead = demo.lead === undefined ? false : demo.lead; state.ann = demo.ann || null; render(); return; }
+    // If a refresh fails, whatever was last shown stays on screen.
+    getJson('fuel-surcharge.json')
+      .then(function (d) { if (d &amp;&amp; Array.isArray(d.records)) state.records = d.records; else if (state.records === null) state.records = []; })
+      .catch(function () { if (state.records === null) state.records = []; })
+      .then(render);
+    getJson('lead-times.json')
+      .then(function (d) { state.lead = d; })
+      .catch(function () { if (state.lead === null) state.lead = false; })
+      .then(render);
+    getJson('announcements.json')
+      .then(function (d) { state.ann = d; })
+      .catch(function () {})
+      .then(render);
+  }
+
+  load();
+  if (!demo) {
+    setInterval(load, REFRESH_MINUTES * 60000);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) load(); });
+  }
+})();
+</script>
+</body>"></iframe>

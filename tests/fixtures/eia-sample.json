@@ -1,0 +1,10 @@
+{
+  "_note": "DEMO FIXTURE for offline preview and tests. Shaped like an EIA API v2 answer. Not a live feed.",
+  "response": {
+    "data": [
+      { "period": "2026-11-09", "series": "EMD_EPD2D_PTE_NUS_DPG", "value": "6.127", "units": "$/GAL" },
+      { "period": "2026-11-02", "series": "EMD_EPD2D_PTE_NUS_DPG", "value": "6.292", "units": "$/GAL" },
+      { "period": "2026-10-26", "series": "EMD_EPD2D_PTE_NUS_DPG", "value": "6.352", "units": "$/GAL" }
+    ]
+  }
+}

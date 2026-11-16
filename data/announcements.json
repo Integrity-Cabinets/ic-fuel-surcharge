@@ -1,0 +1,4 @@
+{
+  "howThisWorks": "Each announcement shows on the banner from showFrom through showThrough (both dates included, YYYY-MM-DD). Leave the list empty to show none. Example: { \"text\": \"Your message here.\", \"showFrom\": \"2026-12-01\", \"showThrough\": \"2026-12-24\" }",
+  "announcements": []
+}

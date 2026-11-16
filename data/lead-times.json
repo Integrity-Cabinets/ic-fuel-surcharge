@@ -1,0 +1,19 @@
+{
+  "howThisWorks": "The dates below are the lead times for the week that starts on anchorWeek. Every Monday after that, the banner moves each one forward 7 days by itself. To reset the pattern, set anchorWeek to this week's Monday and enter this week's dates. To change one week only, add a line to overrides.",
+  "anchorWeek": "2026-11-16",
+  "items": [
+    { "label": "Rush Orders", "type": "week", "weekOf": "2026-11-30" },
+    { "label": "Regular Production", "type": "week", "weekOf": "2026-12-14" },
+    { "label": "Elite Production", "type": "week", "weekOf": "2027-01-04" }
+  ],
+  "overrides": [
+    { "week": "2026-11-30", "label": "Regular Production", "value": "Week of January 4th – January 8th", "why": "Holiday schedule: 5-week lead time" },
+    { "week": "2026-12-07", "label": "Regular Production", "value": "Week of January 11th – January 15th", "why": "Holiday schedule: 5-week lead time" },
+    { "week": "2026-12-14", "label": "Regular Production", "value": "Week of January 18th – January 22nd", "why": "Holiday schedule: 5-week lead time" },
+    { "week": "2026-12-14", "label": "Rush Orders", "value": "Contact Customer Service", "why": "Normal pattern gives the week of Dec 28, which has no production. Real week not yet confirmed." },
+    { "week": "2026-12-21", "label": "Regular Production", "value": "Week of January 25th – January 29th", "why": "Holiday schedule: Dec 21 and Dec 28 orders combined" },
+    { "week": "2026-12-21", "label": "Rush Orders", "value": "Week of January 4th – January 8th", "why": "Holiday schedule" },
+    { "week": "2026-12-28", "label": "Rush Orders", "value": "Week of January 4th – January 8th", "why": "Holiday schedule" }
+  ],
+  "normalPattern": "Rush: production week 2 weeks out. Regular: 4 weeks out. Elite: 7 weeks out. Confirmed by Derek, November 16, 2026."
+}
