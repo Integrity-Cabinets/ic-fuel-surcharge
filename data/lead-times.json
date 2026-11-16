@@ -2,7 +2,6 @@
   "howThisWorks": "The dates below are the lead times for the week that starts on anchorWeek. Every Monday after that, the banner moves each one forward 7 days by itself. To reset the pattern, set anchorWeek to this week's Monday and enter this week's dates. To change one week only, add a line to overrides.",
   "anchorWeek": "2026-11-16",
   "items": [
-    { "label": "Rush Orders", "type": "week", "weekOf": "2026-11-30" },
     { "label": "Regular Production", "type": "week", "weekOf": "2026-12-14" },
     { "label": "Elite Production", "type": "week", "weekOf": "2027-01-04" }
   ],
