@@ -21,6 +21,26 @@
       "configVersion": "2023-09-18.r1",
       "recordedAt": "2026-11-16T19:12:06.762Z",
       "notes": []
+    },
+    {
+      "weekStart": "2026-11-23",
+      "displayEnd": "2026-11-27",
+      "effectiveStart": "2026-11-23T06:00:00.000Z",
+      "effectiveEnd": "2026-11-30T06:00:00.000Z",
+      "surchargePercent": "3.00",
+      "method": "auto",
+      "benchmark": {
+        "source": "U.S. Energy Information Administration (EIA), Gasoline and Diesel Fuel Update",
+        "seriesId": "EMD_EPD2D_PTE_NUS_DPG",
+        "units": "$/GAL",
+        "observationDate": "2026-11-16",
+        "priceDollarsPerGallon": "5.937",
+        "roundedForChart": "5.94",
+        "retrievedAt": "2026-11-17T23:37:41.461Z"
+      },
+      "configVersion": "2023-09-18.r1",
+      "recordedAt": "2026-11-17T23:37:41.461Z",
+      "notes": []
     }
   ]
 }

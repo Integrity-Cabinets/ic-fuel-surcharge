@@ -1,12 +1,14 @@
 {
-  "lastRunAt": "2026-11-17T04:45:23.353Z",
-  "lastSuccessAt": "2026-11-17T04:45:23.353Z",
+  "lastRunAt": "2026-11-17T23:37:41.461Z",
+  "lastSuccessAt": "2026-11-17T23:37:41.461Z",
   "ok": true,
   "mode": "live",
   "currentWeek": "2026-11-16",
   "currentWeekHasRate": true,
-  "nextWeekHasRate": false,
-  "recordsAdded": [],
+  "nextWeekHasRate": true,
+  "recordsAdded": [
+    "2026-11-23: 3.00%"
+  ],
   "alerts": [],
-  "latestEiaFigureSeen": "2026-11-09"
+  "latestEiaFigureSeen": "2026-11-16"
 }
