@@ -1,16 +1,12 @@
 {
-  "lastRunAt": "2026-11-27T04:29:46.750Z",
-  "lastSuccessAt": "2026-11-26T04:19:55.365Z",
-  "ok": false,
+  "lastRunAt": "2026-11-28T00:12:36.411Z",
+  "lastSuccessAt": "2026-11-28T00:12:36.411Z",
+  "ok": true,
   "mode": "live",
   "currentWeek": "2026-11-23",
   "currentWeekHasRate": true,
   "nextWeekHasRate": true,
   "recordsAdded": [],
-  "alerts": [
-    {
-      "level": "error",
-      "message": "Could not get prices from EIA: EIA did not answer within 20 seconds."
-    }
-  ]
+  "alerts": [],
+  "latestEiaFigureSeen": "2026-11-23"
 }
